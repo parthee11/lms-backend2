@@ -1,0 +1,726 @@
+{
+    "_id": "f0483152-3a44-40f6-823e-a3837b90db83",
+    "colName": "lms",
+    "created": "2024-10-07T01:43:39.423Z",
+    "sortNum": 10000,
+    "folders": [
+        {
+            "_id": "826b85e1-9bd2-4f4c-b07e-085a51304211",
+            "name": "auth",
+            "containerId": "",
+            "created": "2024-10-07T01:43:48.220Z",
+            "sortNum": 10000
+        },
+        {
+            "_id": "cd33c480-0f50-445b-9a80-c3acd91ec877",
+            "name": "users",
+            "containerId": "",
+            "created": "2024-10-07T02:08:52.883Z",
+            "sortNum": 20000
+        },
+        {
+            "_id": "a38c7286-7dfd-43fb-bce2-b7f821a8aaef",
+            "name": "batch",
+            "containerId": "",
+            "created": "2024-10-07T12:41:35.918Z",
+            "sortNum": 15000
+        },
+        {
+            "_id": "56149703-9a29-4eb6-a922-8f4ef57e5ab9",
+            "name": "tests",
+            "containerId": "",
+            "created": "2024-10-12T10:37:36.035Z",
+            "sortNum": 17500
+        },
+        {
+            "_id": "d7a17f33-27ed-44a6-b2bb-837c439ac5a7",
+            "name": "tags",
+            "containerId": "",
+            "created": "2024-10-21T06:13:12.260Z",
+            "sortNum": 30000
+        },
+        {
+            "_id": "f5950988-6197-4651-a0a9-637635d36286",
+            "name": "questions",
+            "containerId": "",
+            "created": "2024-10-21T06:13:30.293Z",
+            "sortNum": 40000
+        }
+    ],
+    "requests": [
+        {
+            "_id": "ffeae8be-416b-431e-8022-e70a811fd749",
+            "colId": "f0483152-3a44-40f6-823e-a3837b90db83",
+            "containerId": "826b85e1-9bd2-4f4c-b07e-085a51304211",
+            "name": "register user",
+            "url": "http://127.0.0.1:5000/auth/register",
+            "method": "POST",
+            "sortNum": 10000,
+            "created": "2024-10-07T01:44:07.849Z",
+            "modified": "2024-10-07T01:44:32.837Z",
+            "headers": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"email\": \"lol@lol.com\",\n  \"username\": \"lol\",\n  \"password\": \"lol\"\n}",
+                "form": []
+            }
+        },
+        {
+            "_id": "92253c62-9cd7-4692-8a86-9a0ecc6dfde9",
+            "colId": "f0483152-3a44-40f6-823e-a3837b90db83",
+            "containerId": "826b85e1-9bd2-4f4c-b07e-085a51304211",
+            "name": "login user",
+            "url": "http://127.0.0.1:5000/auth/login",
+            "method": "POST",
+            "sortNum": 20000,
+            "created": "2024-10-07T02:00:39.044Z",
+            "modified": "2024-10-27T05:25:14.981Z",
+            "headers": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"email\": \"admin1@example.com\",\n  \"password\": \"secureAdminPass123\"\n}",
+                "form": []
+            }
+        },
+        {
+            "_id": "ee6b9608-1258-402c-ad0c-2e4ba4890055",
+            "colId": "f0483152-3a44-40f6-823e-a3837b90db83",
+            "containerId": "cd33c480-0f50-445b-9a80-c3acd91ec877",
+            "name": "get user data",
+            "url": "http://127.0.0.1:5000/users/me",
+            "method": "GET",
+            "sortNum": 30000,
+            "created": "2024-10-07T02:09:07.987Z",
+            "modified": "2024-10-27T05:27:17.531Z",
+            "headers": [
+                {
+                    "name": "authorization",
+                    "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3MWRjZTM2OTI2YjI1ZDM1MWFkZTk4MCIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTczMDAwNjcxNH0.SQSQ2sCKxl_5oPm7vMsaplSD6Dg-DJuj5-5r-suw1f8"
+                }
+            ]
+        },
+        {
+            "_id": "6978b70c-35d7-499b-afde-ee7acbe76ffa",
+            "colId": "f0483152-3a44-40f6-823e-a3837b90db83",
+            "containerId": "a38c7286-7dfd-43fb-bce2-b7f821a8aaef",
+            "name": "admin create batches",
+            "url": "http://127.0.0.1:5000/batches/create",
+            "method": "POST",
+            "sortNum": 10000,
+            "created": "2024-10-07T12:41:35.918Z",
+            "modified": "2024-10-12T23:18:17.054Z",
+            "headers": [
+                {
+                    "name": "Authorization",
+                    "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3MDUxZmQ4Y2RiZmFkMDA0MGQxYmM0ZCIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTcyODc0NjMxMH0.qECmHrNEEShaCM0hwZqKqINnN_EcaHNAkVmvVFy3hrM"
+                }
+            ],
+            "body": {
+                "type": "json",
+                "raw": "{\n    \"batch_name\": \"Batch 104\",\n    \"start_date\": \"2024-10-15T00:00:00.000Z\",\n    \"end_date\": \"2024-12-15T00:00:00.000Z\"\n}",
+                "form": []
+            }
+        },
+        {
+            "_id": "f8aaeaad-d12b-4287-90e0-176cbb8535cc",
+            "colId": "f0483152-3a44-40f6-823e-a3837b90db83",
+            "containerId": "826b85e1-9bd2-4f4c-b07e-085a51304211",
+            "name": "register admin",
+            "url": "http://127.0.0.1:5000/auth/register-admin",
+            "method": "POST",
+            "sortNum": 15000,
+            "created": "2024-10-07T12:41:49.430Z",
+            "modified": "2024-10-27T05:23:02.171Z",
+            "headers": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"username\": \"adminUser1\",\n  \"email\": \"admin1@example.com\",\n  \"password\": \"secureAdminPass123\",\n  \"profile\": {\n    \"name\": \"Admin Name\",\n    \"age\": 35,\n    \"gender\": \"male\",\n    \"dob\": \"1989-05-21\",\n    \"phone\": \"1234567890\",\n    \"address\": {\n      \"street\": \"123 Admin Street\",\n      \"city\": \"Admin City\",\n      \"state\": \"Admin State\",\n      \"postalCode\": \"123456\",\n      \"country\": \"Adminland\"\n    }\n  },\n  \"admin_password\": \"makemeadmin\"\n}\n",
+                "form": []
+            }
+        },
+        {
+            "_id": "4fd0be79-2ffd-4261-b201-892d034935a2",
+            "colId": "f0483152-3a44-40f6-823e-a3837b90db83",
+            "containerId": "cd33c480-0f50-445b-9a80-c3acd91ec877",
+            "name": "update user data (by user)",
+            "url": "http://127.0.0.1:5000/users/me",
+            "method": "PUT",
+            "sortNum": 40000,
+            "created": "2024-10-08T10:56:22.435Z",
+            "modified": "2024-10-12T22:48:43.525Z",
+            "headers": [
+                {
+                    "name": "authorization",
+                    "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3MDMzY2I1MmQ0YWE4NjU5ZDI1MTQ1YSIsImlhdCI6MTcyODI2NzE1MX0.kSoi0-b5bOcAZQBAOt7exMY9Fu_smh0Z_kTz0sLGzYo"
+                }
+            ]
+        },
+        {
+            "_id": "38965415-9697-4f9e-8323-a86d10ba064e",
+            "colId": "f0483152-3a44-40f6-823e-a3837b90db83",
+            "containerId": "cd33c480-0f50-445b-9a80-c3acd91ec877",
+            "name": "admin get all users",
+            "url": "http://127.0.0.1:5000/users/all",
+            "method": "GET",
+            "sortNum": 50000,
+            "created": "2024-10-08T10:56:26.534Z",
+            "modified": "2024-10-27T05:27:24.661Z",
+            "headers": [
+                {
+                    "name": "authorization",
+                    "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3MWRjZTM2OTI2YjI1ZDM1MWFkZTk4MCIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTczMDAwNjcxNH0.SQSQ2sCKxl_5oPm7vMsaplSD6Dg-DJuj5-5r-suw1f8"
+                }
+            ],
+            "params": [
+                {
+                    "name": "authorization",
+                    "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3MWRjZTM2OTI2YjI1ZDM1MWFkZTk4MCIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTczMDAwNjcxNH0.SQSQ2sCKxl_5oPm7vMsaplSD6Dg-DJuj5-5r-suw1f8",
+                    "isDisabled": true,
+                    "isPath": false
+                }
+            ]
+        },
+        {
+            "_id": "e508e12e-ebc7-468e-99bf-ca91cddccf4f",
+            "colId": "f0483152-3a44-40f6-823e-a3837b90db83",
+            "containerId": "56149703-9a29-4eb6-a922-8f4ef57e5ab9",
+            "name": "admin create test",
+            "url": "http://127.0.0.1:5000/tests/create",
+            "method": "POST",
+            "sortNum": 10000,
+            "created": "2024-10-12T10:37:36.035Z",
+            "modified": "2024-10-21T16:54:16.479Z",
+            "headers": [
+                {
+                    "name": "Authorization",
+                    "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3MDUxZmQ4Y2RiZmFkMDA0MGQxYmM0ZCIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTcyODc0NjMxMH0.qECmHrNEEShaCM0hwZqKqINnN_EcaHNAkVmvVFy3hrM"
+                }
+            ],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"test_name\": \"Sample Test 3\",\n  \"questions\": [],\n  \"timing\": 120,\n  \"positive_scoring\": 3,\n  \"negative_scoring\": -0.5\n}",
+                "form": []
+            }
+        },
+        {
+            "_id": "cf5a0998-9c19-4f73-897e-d5d09ef1515d",
+            "colId": "f0483152-3a44-40f6-823e-a3837b90db83",
+            "containerId": "a38c7286-7dfd-43fb-bce2-b7f821a8aaef",
+            "name": "admin get all batches ",
+            "url": "http://127.0.0.1:5000/batches/all",
+            "method": "GET",
+            "sortNum": 20000,
+            "created": "2024-10-12T11:08:44.677Z",
+            "modified": "2024-10-12T23:18:25.589Z",
+            "headers": [
+                {
+                    "name": "Authorization",
+                    "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3MDUxZmQ4Y2RiZmFkMDA0MGQxYmM0ZCIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTcyODc0NjMxMH0.qECmHrNEEShaCM0hwZqKqINnN_EcaHNAkVmvVFy3hrM"
+                }
+            ]
+        },
+        {
+            "_id": "9b59fae1-149b-4366-b608-f216960f5dc7",
+            "colId": "f0483152-3a44-40f6-823e-a3837b90db83",
+            "containerId": "a38c7286-7dfd-43fb-bce2-b7f821a8aaef",
+            "name": "admin delete batches ",
+            "url": "http://127.0.0.1:5000/batches/delete/670a58a68de7a36277ebcd94",
+            "method": "DELETE",
+            "sortNum": 20000,
+            "created": "2024-10-12T11:13:33.907Z",
+            "modified": "2024-10-12T11:17:40.843Z",
+            "headers": [
+                {
+                    "name": "Authorization",
+                    "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3MDUxZmQ4Y2RiZmFkMDA0MGQxYmM0ZCIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTcyODczMTA0MywiZXhwIjoxNzI4NzM0NjQzfQ.vNs5_mY71KTkBUQPW0Azlpti6EwdrTdUs2niKHqG-aU"
+                }
+            ]
+        },
+        {
+            "_id": "3295a557-28af-4881-adde-87cc9055bc46",
+            "colId": "f0483152-3a44-40f6-823e-a3837b90db83",
+            "containerId": "a38c7286-7dfd-43fb-bce2-b7f821a8aaef",
+            "name": "admin  enroll multiple students in batch",
+            "url": "http://127.0.0.1:5000/batches/enroll/670a5c963462f6c57a0c7f09",
+            "method": "PUT",
+            "sortNum": 30000,
+            "created": "2024-10-12T14:41:15.609Z",
+            "modified": "2024-10-21T16:35:04.981Z",
+            "headers": [
+                {
+                    "name": "Authorization",
+                    "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3MDUxZmQ4Y2RiZmFkMDA0MGQxYmM0ZCIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTcyODc0NjMxMH0.qECmHrNEEShaCM0hwZqKqINnN_EcaHNAkVmvVFy3hrM"
+                }
+            ],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"userIds\": [\"670b01e3cb551f23a4777b18\", \"670b01f0cb551f23a4777b1b\"]\n}",
+                "form": []
+            }
+        },
+        {
+            "_id": "c856fa95-73ec-4c57-9109-999f08aacc55",
+            "colId": "f0483152-3a44-40f6-823e-a3837b90db83",
+            "containerId": "cd33c480-0f50-445b-9a80-c3acd91ec877",
+            "name": "admin add new user",
+            "url": "http://127.0.0.1:5000/users/add",
+            "method": "POST",
+            "sortNum": 60000,
+            "created": "2024-10-12T16:00:10.747Z",
+            "modified": "2024-10-27T05:25:55.120Z",
+            "headers": [
+                {
+                    "name": "authorization",
+                    "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3MWRjZTM2OTI2YjI1ZDM1MWFkZTk4MCIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTczMDAwNjcxNH0.SQSQ2sCKxl_5oPm7vMsaplSD6Dg-DJuj5-5r-suw1f8"
+                }
+            ],
+            "params": [
+                {
+                    "name": "authorization",
+                    "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3MDUxZmQ4Y2RiZmFkMDA0MGQxYmM0ZCIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTcyODc0NjI3MX0.CchoU7rKRRTbzp9Qm7ijhojjwtEnkWBU758htj8r6Gg",
+                    "isDisabled": true,
+                    "isPath": false
+                }
+            ],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"username\": \"student4\",\n  \"email\": \"student4@example.com\",\n  \"password\": \"secureAdminPass123\",\n  \"profile\": {\n    \"name\": \"student4\",\n    \"age\": 20,\n    \"gender\": \"female\",\n    \"dob\": \"1989-05-21\",\n    \"phone\": \"1234567890\",\n    \"address\": {\n      \"street\": \"123 Admin Street\",\n      \"city\": \"Admin City\",\n      \"state\": \"Admin State\",\n      \"postalCode\": \"123456\",\n      \"country\": \"Adminland\"\n    }\n  },\n  \"role\": \"student\"\n}\n",
+                "form": []
+            }
+        },
+        {
+            "_id": "6ea1b6fe-ee5b-4c3e-ac7a-b87f83af22ef",
+            "colId": "f0483152-3a44-40f6-823e-a3837b90db83",
+            "containerId": "cd33c480-0f50-445b-9a80-c3acd91ec877",
+            "name": "admin delete user ",
+            "url": "http://127.0.0.1:5000/users/delete/670afb1ad742e72950e0f3c8",
+            "method": "DELETE",
+            "sortNum": 70000,
+            "created": "2024-10-12T22:46:00.478Z",
+            "modified": "2024-10-12T22:47:58.563Z",
+            "headers": [
+                {
+                    "name": "authorization",
+                    "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3MDUxZmQ4Y2RiZmFkMDA0MGQxYmM0ZCIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTcyODc0NjMxMH0.qECmHrNEEShaCM0hwZqKqINnN_EcaHNAkVmvVFy3hrM"
+                }
+            ],
+            "params": [
+                {
+                    "name": "authorization",
+                    "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3MDUxZmQ4Y2RiZmFkMDA0MGQxYmM0ZCIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTcyODc0NjI3MX0.CchoU7rKRRTbzp9Qm7ijhojjwtEnkWBU758htj8r6Gg",
+                    "isDisabled": true,
+                    "isPath": false
+                }
+            ]
+        },
+        {
+            "_id": "7a4af322-2e5c-4286-8862-84b574cc3398",
+            "colId": "f0483152-3a44-40f6-823e-a3837b90db83",
+            "containerId": "cd33c480-0f50-445b-9a80-c3acd91ec877",
+            "name": "admin update user ",
+            "url": "http://127.0.0.1:5000/users/update/670afbe0d742e72950e0f3d1",
+            "method": "PUT",
+            "sortNum": 80000,
+            "created": "2024-10-12T22:49:17.280Z",
+            "modified": "2024-10-12T22:57:18.810Z",
+            "headers": [
+                {
+                    "name": "authorization",
+                    "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3MDUxZmQ4Y2RiZmFkMDA0MGQxYmM0ZCIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTcyODc0NjMxMH0.qECmHrNEEShaCM0hwZqKqINnN_EcaHNAkVmvVFy3hrM"
+                }
+            ],
+            "params": [
+                {
+                    "name": "authorization",
+                    "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3MDUxZmQ4Y2RiZmFkMDA0MGQxYmM0ZCIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTcyODc0NjI3MX0.CchoU7rKRRTbzp9Qm7ijhojjwtEnkWBU758htj8r6Gg",
+                    "isDisabled": true,
+                    "isPath": false
+                }
+            ],
+            "body": {
+                "type": "json",
+                "raw": "{\n    \"username\": \"lmao\",\n    \"profile\": {\n        \"name\": \"John Doe\", \n        \"age\": 25,\n        \"gender\": \"female\"\n    }\n}\n",
+                "form": []
+            }
+        },
+        {
+            "_id": "76bf08ee-7d1c-4c95-8b6a-0805ce3b0fc9",
+            "colId": "f0483152-3a44-40f6-823e-a3837b90db83",
+            "containerId": "a38c7286-7dfd-43fb-bce2-b7f821a8aaef",
+            "name": "admin get all students in a batch ",
+            "url": "http://127.0.0.1:5000/batches/students/670a5c963462f6c57a0c7f09",
+            "method": "GET",
+            "sortNum": 30000,
+            "created": "2024-10-12T23:30:00.277Z",
+            "modified": "2024-10-12T23:31:30.566Z",
+            "headers": [
+                {
+                    "name": "Authorization",
+                    "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3MDUxZmQ4Y2RiZmFkMDA0MGQxYmM0ZCIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTcyODc0NjMxMH0.qECmHrNEEShaCM0hwZqKqINnN_EcaHNAkVmvVFy3hrM"
+                }
+            ]
+        },
+        {
+            "_id": "c5c3ca36-ba22-45cb-8666-733a486a7da1",
+            "colId": "f0483152-3a44-40f6-823e-a3837b90db83",
+            "containerId": "a38c7286-7dfd-43fb-bce2-b7f821a8aaef",
+            "name": "admin remove student from a batch ",
+            "url": "http://127.0.0.1:5000/batches/remove/670a5c963462f6c57a0c7f09",
+            "method": "PUT",
+            "sortNum": 40000,
+            "created": "2024-10-12T23:33:37.043Z",
+            "modified": "2024-10-12T23:34:35.745Z",
+            "headers": [
+                {
+                    "name": "Authorization",
+                    "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3MDUxZmQ4Y2RiZmFkMDA0MGQxYmM0ZCIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTcyODc0NjMxMH0.qECmHrNEEShaCM0hwZqKqINnN_EcaHNAkVmvVFy3hrM"
+                }
+            ],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"userId\": \"670b01e3cb551f23a4777b18\"\n}",
+                "form": []
+            }
+        },
+        {
+            "_id": "14058c9d-047c-497a-9cd1-c133c6091146",
+            "colId": "f0483152-3a44-40f6-823e-a3837b90db83",
+            "containerId": "56149703-9a29-4eb6-a922-8f4ef57e5ab9",
+            "name": "fetch a test by id",
+            "url": "http://127.0.0.1:5000/tests/670bb0add27ae1f5d7e38566",
+            "method": "GET",
+            "sortNum": 20000,
+            "created": "2024-10-13T01:19:36.130Z",
+            "modified": "2024-10-13T11:40:01.161Z",
+            "headers": [
+                {
+                    "name": "Authorization",
+                    "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3MDUxZmQ4Y2RiZmFkMDA0MGQxYmM0ZCIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTcyODc0NjMxMH0.qECmHrNEEShaCM0hwZqKqINnN_EcaHNAkVmvVFy3hrM"
+                }
+            ]
+        },
+        {
+            "_id": "bdc6ec2a-4fc9-4c68-95b6-236b92715608",
+            "colId": "f0483152-3a44-40f6-823e-a3837b90db83",
+            "containerId": "56149703-9a29-4eb6-a922-8f4ef57e5ab9",
+            "name": "admin fetch all tests ",
+            "url": "http://127.0.0.1:5000/tests/all",
+            "method": "GET",
+            "sortNum": 30000,
+            "created": "2024-10-13T02:19:56.876Z",
+            "modified": "2024-10-13T02:20:43.399Z",
+            "headers": [
+                {
+                    "name": "Authorization",
+                    "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3MDUxZmQ4Y2RiZmFkMDA0MGQxYmM0ZCIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTcyODc0NjMxMH0.qECmHrNEEShaCM0hwZqKqINnN_EcaHNAkVmvVFy3hrM"
+                }
+            ]
+        },
+        {
+            "_id": "aaa43c34-a6b1-48fb-a7bf-25359c3910a3",
+            "colId": "f0483152-3a44-40f6-823e-a3837b90db83",
+            "containerId": "56149703-9a29-4eb6-a922-8f4ef57e5ab9",
+            "name": "USER fetch all tests ",
+            "url": "http://127.0.0.1:5000/tests/my-tests",
+            "method": "GET",
+            "sortNum": 40000,
+            "created": "2024-10-13T02:31:34.678Z",
+            "modified": "2024-10-13T11:22:58.467Z",
+            "headers": [
+                {
+                    "name": "Authorization",
+                    "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3MGIwMWUzY2I1NTFmMjNhNDc3N2IxOCIsInJvbGUiOiJzdHVkZW50IiwiaWF0IjoxNzI4ODE4NTYxfQ.iy6YVMWPPkYdt_f89MSL1zeltxn52jkvBopzLrgHc_w"
+                }
+            ]
+        },
+        {
+            "_id": "26764b4c-7672-4c84-8825-d0e9d27f2123",
+            "colId": "f0483152-3a44-40f6-823e-a3837b90db83",
+            "containerId": "56149703-9a29-4eb6-a922-8f4ef57e5ab9",
+            "name": "admin update test",
+            "url": "http://127.0.0.1:5000/tests/670b1ff6de94bd8dcf7017fc",
+            "method": "PUT",
+            "sortNum": 50000,
+            "created": "2024-10-13T02:33:00.249Z",
+            "modified": "2024-10-13T11:47:37.353Z",
+            "headers": [
+                {
+                    "name": "Authorization",
+                    "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3MDUxZmQ4Y2RiZmFkMDA0MGQxYmM0ZCIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTcyODc0NjMxMH0.qECmHrNEEShaCM0hwZqKqINnN_EcaHNAkVmvVFy3hrM"
+                }
+            ]
+        },
+        {
+            "_id": "f24dbac0-bd23-481f-a402-c04188fec1c2",
+            "colId": "f0483152-3a44-40f6-823e-a3837b90db83",
+            "containerId": "56149703-9a29-4eb6-a922-8f4ef57e5ab9",
+            "name": "user update question state",
+            "url": "http://127.0.0.1:5000/tests/670b1ff6de94bd8dcf7017fc/questions/670b1ff6de94bd8dcf7017fd/state",
+            "method": "PUT",
+            "sortNum": 60000,
+            "created": "2024-10-13T11:11:07.653Z",
+            "modified": "2024-10-13T11:12:55.387Z",
+            "headers": [
+                {
+                    "name": "Authorization",
+                    "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3MDUxZmQ4Y2RiZmFkMDA0MGQxYmM0ZCIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTcyODc0NjMxMH0.qECmHrNEEShaCM0hwZqKqINnN_EcaHNAkVmvVFy3hrM"
+                }
+            ],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"state\": \"flagged\"\n}",
+                "form": []
+            }
+        },
+        {
+            "_id": "9bd45c60-c591-4fec-a869-a1429070c785",
+            "colId": "f0483152-3a44-40f6-823e-a3837b90db83",
+            "containerId": "a38c7286-7dfd-43fb-bce2-b7f821a8aaef",
+            "name": "admin add multiple tests to batch",
+            "url": "http://127.0.0.1:5000/batches/add-tests/670a5c963462f6c57a0c7f09",
+            "method": "PUT",
+            "sortNum": 50000,
+            "created": "2024-10-13T11:17:19.763Z",
+            "modified": "2024-10-27T02:34:51.673Z",
+            "headers": [
+                {
+                    "name": "Authorization",
+                    "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3MDUxZmQ4Y2RiZmFkMDA0MGQxYmM0ZCIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTcyODc0NjMxMH0.qECmHrNEEShaCM0hwZqKqINnN_EcaHNAkVmvVFy3hrM"
+                }
+            ],
+            "body": {
+                "type": "json",
+                "raw": "{\n    \"testIds\": [\"67168719678c8ebd9293471f\", \"6716872b678c8ebd92934722\", \"67168738678c8ebd92934725\"]\n}",
+                "form": []
+            }
+        },
+        {
+            "_id": "1842ec87-dac4-4f0b-a354-b99038c64b18",
+            "colId": "f0483152-3a44-40f6-823e-a3837b90db83",
+            "containerId": "a38c7286-7dfd-43fb-bce2-b7f821a8aaef",
+            "name": "admin remove test from batch",
+            "url": "http://127.0.0.1:5000/batches/remove-test/670a5c963462f6c57a0c7f09/670bb042af2eb56b1985d0d2",
+            "method": "DELETE",
+            "sortNum": 60000,
+            "created": "2024-10-13T11:32:44.535Z",
+            "modified": "2024-10-13T11:34:58.165Z",
+            "headers": [
+                {
+                    "name": "Authorization",
+                    "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3MDUxZmQ4Y2RiZmFkMDA0MGQxYmM0ZCIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTcyODc0NjMxMH0.qECmHrNEEShaCM0hwZqKqINnN_EcaHNAkVmvVFy3hrM"
+                }
+            ]
+        },
+        {
+            "_id": "b7c09638-6b8e-47cc-8f3d-1a9611daf47d",
+            "colId": "f0483152-3a44-40f6-823e-a3837b90db83",
+            "containerId": "a38c7286-7dfd-43fb-bce2-b7f821a8aaef",
+            "name": "admin get all tests in a batch",
+            "url": "http://127.0.0.1:5000/batches/tests/670a5c963462f6c57a0c7f09",
+            "method": "GET",
+            "sortNum": 40000,
+            "created": "2024-10-21T06:10:48.963Z",
+            "modified": "2024-10-21T06:11:21.138Z",
+            "headers": [
+                {
+                    "name": "Authorization",
+                    "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3MDUxZmQ4Y2RiZmFkMDA0MGQxYmM0ZCIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTcyODc0NjMxMH0.qECmHrNEEShaCM0hwZqKqINnN_EcaHNAkVmvVFy3hrM"
+                }
+            ]
+        },
+        {
+            "_id": "dc37d89d-1ed2-47dd-aa5c-697d5d849e84",
+            "colId": "f0483152-3a44-40f6-823e-a3837b90db83",
+            "containerId": "d7a17f33-27ed-44a6-b2bb-837c439ac5a7",
+            "name": "admin create a single tag",
+            "url": "http://127.0.0.1:5000/tags/create",
+            "method": "POST",
+            "sortNum": 100000,
+            "created": "2024-10-21T06:15:21.882Z",
+            "modified": "2024-10-21T06:32:25.745Z",
+            "headers": [
+                {
+                    "name": "Authorization",
+                    "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3MDUxZmQ4Y2RiZmFkMDA0MGQxYmM0ZCIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTcyODc0NjMxMH0.qECmHrNEEShaCM0hwZqKqINnN_EcaHNAkVmvVFy3hrM"
+                }
+            ],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"tag_name\": \"eastwards\"\n}",
+                "form": []
+            }
+        },
+        {
+            "_id": "088ba9eb-702e-4e11-9073-6cca6c8f9efb",
+            "colId": "f0483152-3a44-40f6-823e-a3837b90db83",
+            "containerId": "d7a17f33-27ed-44a6-b2bb-837c439ac5a7",
+            "name": "admin delete a single tag",
+            "url": "http://127.0.0.1:5000/tags/6715f43f366b83c408687172",
+            "method": "DELETE",
+            "sortNum": 110000,
+            "created": "2024-10-21T06:23:09.283Z",
+            "modified": "2024-10-21T06:27:17.432Z",
+            "headers": [
+                {
+                    "name": "Authorization",
+                    "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3MDUxZmQ4Y2RiZmFkMDA0MGQxYmM0ZCIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTcyODc0NjMxMH0.qECmHrNEEShaCM0hwZqKqINnN_EcaHNAkVmvVFy3hrM"
+                }
+            ]
+        },
+        {
+            "_id": "b7c8f61b-3efc-4eb7-875a-212f883df59c",
+            "colId": "f0483152-3a44-40f6-823e-a3837b90db83",
+            "containerId": "d7a17f33-27ed-44a6-b2bb-837c439ac5a7",
+            "name": "admin update a single tag",
+            "url": "http://127.0.0.1:5000/tags/6715f43f366b83c408687172",
+            "method": "PUT",
+            "sortNum": 120000,
+            "created": "2024-10-21T06:27:37.118Z",
+            "modified": "2024-10-21T06:29:39.336Z",
+            "headers": [
+                {
+                    "name": "Authorization",
+                    "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3MDUxZmQ4Y2RiZmFkMDA0MGQxYmM0ZCIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTcyODc0NjMxMH0.qECmHrNEEShaCM0hwZqKqINnN_EcaHNAkVmvVFy3hrM"
+                }
+            ],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"tag_name\": \"lmao\"\n}",
+                "form": []
+            }
+        },
+        {
+            "_id": "4208479a-98e8-4712-84fe-1be2d49172ba",
+            "colId": "f0483152-3a44-40f6-823e-a3837b90db83",
+            "containerId": "d7a17f33-27ed-44a6-b2bb-837c439ac5a7",
+            "name": "admin fuzzy search tag names and thier counts",
+            "url": "http://127.0.0.1:5000/tags/search/l",
+            "method": "GET",
+            "sortNum": 130000,
+            "created": "2024-10-21T06:32:44.016Z",
+            "modified": "2024-10-27T06:02:13.268Z",
+            "headers": [
+                {
+                    "name": "Authorization",
+                    "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3MDUxZmQ4Y2RiZmFkMDA0MGQxYmM0ZCIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTcyODc0NjMxMH0.qECmHrNEEShaCM0hwZqKqINnN_EcaHNAkVmvVFy3hrM"
+                }
+            ]
+        },
+        {
+            "_id": "6f47538e-4528-4d2c-99df-aceb34b83bf8",
+            "colId": "f0483152-3a44-40f6-823e-a3837b90db83",
+            "containerId": "d7a17f33-27ed-44a6-b2bb-837c439ac5a7",
+            "name": "admin get all tag names and thier counts",
+            "url": "http://127.0.0.1:5000/tags/all",
+            "method": "GET",
+            "sortNum": 140000,
+            "created": "2024-10-21T14:34:06.666Z",
+            "modified": "2024-10-21T14:34:36.611Z",
+            "headers": [
+                {
+                    "name": "Authorization",
+                    "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3MDUxZmQ4Y2RiZmFkMDA0MGQxYmM0ZCIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTcyODc0NjMxMH0.qECmHrNEEShaCM0hwZqKqINnN_EcaHNAkVmvVFy3hrM"
+                }
+            ]
+        },
+        {
+            "_id": "b6385e32-5100-4d9d-8c8f-fafc9cc4919e",
+            "colId": "f0483152-3a44-40f6-823e-a3837b90db83",
+            "containerId": "d7a17f33-27ed-44a6-b2bb-837c439ac5a7",
+            "name": "admin get questions by tag name",
+            "url": "http://127.0.0.1:5000/tags/questions?tags=easy",
+            "method": "GET",
+            "sortNum": 135000,
+            "created": "2024-10-21T14:35:33.316Z",
+            "modified": "2024-10-21T16:26:29.534Z",
+            "headers": [
+                {
+                    "name": "Authorization",
+                    "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3MDUxZmQ4Y2RiZmFkMDA0MGQxYmM0ZCIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTcyODc0NjMxMH0.qECmHrNEEShaCM0hwZqKqINnN_EcaHNAkVmvVFy3hrM"
+                }
+            ],
+            "params": [
+                {
+                    "name": "tags",
+                    "value": "easy",
+                    "isPath": false
+                }
+            ]
+        },
+        {
+            "_id": "b0cec582-a2ae-4597-9bb5-3f7a3689a5cf",
+            "colId": "f0483152-3a44-40f6-823e-a3837b90db83",
+            "containerId": "f5950988-6197-4651-a0a9-637635d36286",
+            "name": "admin create questions in bulk",
+            "url": "http://127.0.0.1:5000/questions/create",
+            "method": "POST",
+            "sortNum": 10000,
+            "created": "2024-10-21T14:42:33.247Z",
+            "modified": "2024-10-21T16:53:26.865Z",
+            "headers": [
+                {
+                    "name": "Authorization",
+                    "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3MDUxZmQ4Y2RiZmFkMDA0MGQxYmM0ZCIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTcyODc0NjMxMH0.qECmHrNEEShaCM0hwZqKqINnN_EcaHNAkVmvVFy3hrM"
+                }
+            ],
+            "body": {
+                "type": "json",
+                "raw": "[\n    {\n        \"question\": \"What is the capital of France?\",\n        \"options\": [\n            { \"key\": 0, \"value\": \"Berlin\" },\n            { \"key\": 1, \"value\": \"Madrid\" },\n            { \"key\": 2, \"value\": \"Paris\" },\n            { \"key\": 3, \"value\": \"Rome\" }\n        ],\n        \"correct_answer\": 2,\n        \"reasoning\": \"Paris is the capital of France.\",\n        \"tags\": [\"lol\", \"easy\"]\n    },\n    {\n        \"question\": \"What is 2 + 2?\",\n        \"options\": [\n            { \"key\": 0, \"value\": \"3\" },\n            { \"key\": 1, \"value\": \"4\" },\n            { \"key\": 2, \"value\": \"5\" },\n            { \"key\": 3, \"value\": \"6\" }\n        ],\n        \"correct_answer\": 1,\n        \"reasoning\": \"2 + 2 equals 4.\",\n        \"tags\": [\"easy\"]\n    },\n    {\n        \"question\": \"Which element has the chemical symbol 'O'?\",\n        \"options\": [\n            { \"key\": 0, \"value\": \"Oxygen\" },\n            { \"key\": 1, \"value\": \"Osmium\" },\n            { \"key\": 2, \"value\": \"Oganesson\" },\n            { \"key\": 3, \"value\": \"Osmate\" }\n        ],\n        \"correct_answer\": 0,\n        \"reasoning\": \"Oxygen has the chemical symbol 'O'.\",\n        \"tags\": [\"hard\"]\n    },\n    {\n        \"question\": \"What is the largest planet in our solar system?\",\n        \"options\": [\n            { \"key\": 0, \"value\": \"Earth\" },\n            { \"key\": 1, \"value\": \"Jupiter\" },\n            { \"key\": 2, \"value\": \"Mars\" },\n            { \"key\": 3, \"value\": \"Venus\" }\n        ],\n        \"correct_answer\": 1,\n        \"reasoning\": \"Jupiter is the largest planet in our solar system.\",\n        \"tags\": [\"lol\", \"hard\"]\n    }\n]\n",
+                "form": []
+            }
+        },
+        {
+            "_id": "61fe2c4d-c19b-4bde-809c-bddd448d9829",
+            "colId": "f0483152-3a44-40f6-823e-a3837b90db83",
+            "containerId": "f5950988-6197-4651-a0a9-637635d36286",
+            "name": "admin update a question",
+            "url": "http://127.0.0.1:5000/questions/update/671680528e20fcaddda52e06",
+            "method": "PUT",
+            "sortNum": 20000,
+            "created": "2024-10-21T15:50:37.545Z",
+            "modified": "2024-10-21T16:26:06.184Z",
+            "headers": [
+                {
+                    "name": "Authorization",
+                    "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3MDUxZmQ4Y2RiZmFkMDA0MGQxYmM0ZCIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTcyODc0NjMxMH0.qECmHrNEEShaCM0hwZqKqINnN_EcaHNAkVmvVFy3hrM"
+                }
+            ],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"question\": \"What is the capital of France? huh?\",\n  \"options\": [\n    {\n      \"key\": 0,\n      \"value\": \"Berlin\"\n    },\n    {\n      \"key\": 1,\n      \"value\": \"Madrid\"\n    },\n    {\n      \"key\": 2,\n      \"value\": \"Paris\"\n    },\n    {\n      \"key\": 3,\n      \"value\": \"Rome\"\n    }\n  ],\n  \"correct_answer\": 2,\n  \"reasoning\": \"Paris is the capital of France.\",\n  \"tags\": [\n    \"lol\",\n    \"easy\", \n    \"new_2024\"\n  ]\n}",
+                "form": []
+            }
+        },
+        {
+            "_id": "64ef5d0e-9b8b-4e2e-8fe9-fec570b0c8b4",
+            "colId": "f0483152-3a44-40f6-823e-a3837b90db83",
+            "containerId": "f5950988-6197-4651-a0a9-637635d36286",
+            "name": "admin delete a question",
+            "url": "http://127.0.0.1:5000/questions/delete/671680528e20fcaddda52e06",
+            "method": "DELETE",
+            "sortNum": 30000,
+            "created": "2024-10-21T16:27:09.715Z",
+            "modified": "2024-10-21T16:27:41.881Z",
+            "headers": [
+                {
+                    "name": "Authorization",
+                    "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3MDUxZmQ4Y2RiZmFkMDA0MGQxYmM0ZCIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTcyODc0NjMxMH0.qECmHrNEEShaCM0hwZqKqINnN_EcaHNAkVmvVFy3hrM"
+                }
+            ],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"question\": \"What is the capital of France? huh?\",\n  \"options\": [\n    {\n      \"key\": 0,\n      \"value\": \"Berlin\"\n    },\n    {\n      \"key\": 1,\n      \"value\": \"Madrid\"\n    },\n    {\n      \"key\": 2,\n      \"value\": \"Paris\"\n    },\n    {\n      \"key\": 3,\n      \"value\": \"Rome\"\n    }\n  ],\n  \"correct_answer\": 2,\n  \"reasoning\": \"Paris is the capital of France.\",\n  \"tags\": [\n    \"lol\",\n    \"easy\", \n    \"new_2024\"\n  ]\n}",
+                "form": []
+            }
+        }
+    ],
+    "settings": {
+        "headers": [
+            {
+                "name": "Authorization",
+                "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3MDMzY2I1MmQ0YWE4NjU5ZDI1MTQ1YSIsImlhdCI6MTcyODI2NzE1MX0.kSoi0-b5bOcAZQBAOt7exMY9Fu_smh0Z_kTz0sLGzYo",
+                "isDisabled": true
+            }
+        ]
+    }
+}
