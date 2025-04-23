@@ -258,7 +258,11 @@ router.put('/submit/:id', authMiddleware, async (req, res) => {
         const finalEndTime = currentTime > testEndTime ? testEndTime : currentTime;
         const finalizedResult = await finalizeTestResult(testResult, finalEndTime);
         
-        res.json(formatResponse(true, finalizedResult));
+        // Add total_questions to the response
+        const resultWithTotalQuestions = finalizedResult.toObject();
+        resultWithTotalQuestions.total_questions = finalizedResult.test_id?.total_questions || finalizedResult.answers.length;
+        
+        res.json(formatResponse(true, resultWithTotalQuestions));
     } catch (err) {
         console.error('Error submitting test result:', err);
         res.status(500).json(formatResponse(false, { message: 'Failed to submit test result', error: err.message }));
