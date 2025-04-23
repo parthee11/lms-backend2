@@ -19,7 +19,7 @@ app.use(express.urlencoded({ extended: true, limit: '10mb' }));
 // CORS settings
 const corsOptions = {
     origin: function (origin, callback) {
-        const allowedList = ['http://localhost:5173', 'http://localhost', 'http://localhost:5174', 'http://localhost:5500', 'https://lms2.netlify.app'];
+        const allowedList = ['http://localhost:5173', 'http://localhost', 'http://localhost:5174', 'http://localhost:5500', 'https://lms-blr.netlify.app'];
         if (!origin || allowedList.includes(origin)) {
             callback(null, true);
         } else {
