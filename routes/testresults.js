@@ -207,7 +207,15 @@ router.get('/by-test/:test_id', authMiddleware, async (req, res) => {
             .populate('test_id')
             .populate('answers.question_id');
 
-        res.json(formatResponse(true, results));
+        // Add total_questions to each test result
+        const processedResults = results.map(result => {
+            const resultObj = result.toObject();
+            // Add total_questions from the test or calculate from answers array
+            resultObj.total_questions = result.test_id?.total_questions || result.answers.length;
+            return resultObj;
+        });
+
+        res.json(formatResponse(true, processedResults));
     } catch (err) {
         console.error('Error fetching test results:', err);
         res.status(500).json(formatResponse(false, { message: 'Failed to fetch test results', error: err.message }));
